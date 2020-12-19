@@ -1,7 +1,7 @@
 # Branded Members
 Branded Members is a project for a job interview.
 
-![AppImg]('./img/BrandedMembers.png')
+<img src='../img/BrandedMembers.png' alt='AppImg' width='500' />
 
 ## How to engage the app:
 The project has 2 servers, the frontend (react) and the backend (express).
