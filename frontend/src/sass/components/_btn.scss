@@ -1,0 +1,31 @@
+.btn {
+        &, &:link, &:hover {
+            border: none;
+            border-radius: .5rem;
+            cursor: pointer;
+        }
+
+        &-lg {
+            padding: 1rem 2rem;
+            font-size: 2rem;
+        }
+        
+        &-green {
+            background-color: $color-primary;
+            color: $color-white;
+        }
+
+}
+
+.btn-icon {
+    border: none;
+    background-color: rgba($color-grey-light-2, .5);
+    color: $color-grey-dark-3;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 200ms;
+
+    &:active, &:focus {
+        outline: none;
+    }
+}

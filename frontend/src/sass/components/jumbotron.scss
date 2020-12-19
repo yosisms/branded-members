@@ -1,0 +1,36 @@
+.jumbotron {
+    position: relative;
+    background-color: $color-grey-light-1;
+    padding: 3rem;
+    text-align: center;
+
+    &__message {
+        font-size: 1.7rem;
+        white-space: pre-line;
+    }
+
+    &__back-icon {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+
+        @include respond(phone) {
+            top: 1rem;
+            left: 1rem;
+        }
+        
+        &__link {
+            font-size: 2rem;
+            transition: all 250ms;
+
+            @include respond(phone) {
+                font-size: 1.5rem;
+            }
+
+            &:hover {
+                color: $color-primary;
+                text-decoration: underline;
+            }
+        }
+    }
+}

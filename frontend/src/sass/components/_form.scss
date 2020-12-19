@@ -1,0 +1,79 @@
+.formContainer {
+    padding-top: 3rem;
+    text-align: center;
+}
+
+.form {
+    &__group{
+        position: relative;
+        width: 30rem;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+
+    &__input{
+        width: 100%;
+        padding: 2rem 1.7rem 1rem 1.7rem;
+        font-size: 1.7rem;
+        border: 1px solid $color-input-border;
+        border-radius: 1rem;
+        transition: all 350ms;
+
+        &--error {
+            &, &:focus {
+                border: 1px solid $color-error !important;
+            }
+        }
+
+        &:focus {
+            outline: none;
+            border: 1px solid $color-input-border-focused;
+        }
+
+        &:placeholder-shown {
+            padding: 1.5rem 1.7rem 1.5rem 1.7rem;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        left: 1.5rem;
+        transform: translateY(-1.5rem);
+        transition: all 350ms;
+        background-color: $color-white;
+        padding: 0 1rem;
+        font-size: 1.5rem;
+        border: 1px solid $color-input-border;
+        border-radius: 1.5rem;
+
+        &--error {
+            border: 1px solid $color-error !important;
+        }
+    }
+
+    &__error {
+        margin-bottom: 1.5rem;
+        color: $color-error;
+        font-size: 1.3rem;
+
+        &--register {
+            position: absolute;
+            top: -1.8rem;
+            right: 2rem;
+            color: $color-error;
+            font-size: 1.3rem;
+        }
+    }
+
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(1rem);
+        font-size: 1.5rem;
+        background-color: transparent;
+    }
+
+    &__input:focus + &__label {
+        border: 1px solid $color-input-border-focused;
+    }
+}

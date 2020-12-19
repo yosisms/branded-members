@@ -1,0 +1,48 @@
+body {
+    font-family: "lato", sans-serif;
+    font-weight: 400;
+    /* font-size: 16px; */
+    line-height: 1.7;
+    color: $color-grey-dark;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.heading-primary {
+    font-size: 5rem;
+    color: $color-white;
+    text-transform: uppercase;
+    display: inline-block;
+
+    @include respond(tab-land){
+        font-size: 4.5rem;
+    }
+
+    @include respond(tab-port){
+        font-size: 3.5rem;
+    }
+
+    @include respond(phone){
+        font-size: 4rem;
+    }
+}
+
+.heading-secondary {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.heading-tertiary {
+    font-size: 2rem;
+    text-align: center;
+    color: $color-grey-dark-3;
+}
+
+.heading-quaternary {
+    font-size: 1.5;
+    color: $color-grey-dark;
+}
