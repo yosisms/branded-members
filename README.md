@@ -1,5 +1,5 @@
 # Branded Members
-Branded Members is a project for a job interview.
+Branded Members is an assignment for a job interview to [https://www.branded.co.il](https://www.branded.co.il)
 
 <img src='./img/BrandedMembers.png' alt='AppImg' />
 
