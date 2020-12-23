@@ -57,9 +57,8 @@
         font-size: 1.3rem;
 
         &--register {
-            position: absolute;
-            top: -1.8rem;
-            right: 2rem;
+            text-align: left;
+            margin-bottom: 1.5rem;
             color: $color-error;
             font-size: 1.3rem;
         }
