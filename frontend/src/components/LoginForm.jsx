@@ -3,26 +3,26 @@ import { useHistory } from "react-router-dom";
 import axios from 'axios';
 import {useForm} from 'react-hook-form';
 
-const LoginForm = ({setLoggedUser}) => {
+const LoginForm = ({logUser}) => {
     const history = useHistory();
     const {register, handleSubmit, errors} = useForm();
     const [error, setError] = useState(null);
 
-    const onSubmit = (data, e) => {
-        console.log(data);
+    const onSubmit = (data) => {
         axios({
             method: 'POST',
-            url: '/api/users/login',
+            url: '/api/login',
             headers: {
                 'Content-Type': 'application/json'
             },
             data: JSON.stringify(data)
-        }).then((respond) => {
-            if(respond.data.isValid === false) {
-                setError('username or password is incorrect');
-            } else {
-                setLoggedUser(respond.data);
+        }).then((respond, err) => {
+            err && console.log(err);
+            if(respond) {
+                logUser();
                 history.push('/');
+            } else {
+                setError('username or password is incorrect');
             }
         });
     }

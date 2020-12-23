@@ -3,11 +3,11 @@ import {useHistory} from 'react-router-dom';
 import Jumbo from '../Jumbo';
 import RegisterForm from '../RegisterForm';
 
-const Register = ({callUsersApi, loggedUser}) => {
+const Register = ({loggedUser, logUser}) => {
     const history = useHistory();
 
     useEffect(()=> {
-        if(loggedUser !== null) {
+        if(loggedUser ) {
             history.push('/');
         }
     })
@@ -17,7 +17,7 @@ const Register = ({callUsersApi, loggedUser}) => {
     return (
         <div>
             <Jumbo title="Register" message={jumboMessage} />
-            <RegisterForm callUsersApi={callUsersApi} /> 
+            <RegisterForm logUser={logUser} /> 
         </div>
     )
 }

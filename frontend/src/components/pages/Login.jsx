@@ -3,11 +3,11 @@ import {useHistory} from 'react-router-dom';
 import Jumbo from '../Jumbo';
 import LoginForm from '../LoginForm';
 
-const Login = ({setLoggedUser, loggedUser}) => {
+const Login = ({logUser, loggedUser}) => {
     const history = useHistory();
 
     useEffect(()=> {
-        if(loggedUser !== null) {
+        if(loggedUser) {
             history.push('/');
         }
     })
@@ -17,7 +17,7 @@ const Login = ({setLoggedUser, loggedUser}) => {
     return (
         <div>
             <Jumbo title="Login" message={jumboMessage} />
-            <LoginForm setLoggedUser={setLoggedUser} />
+            <LoginForm logUser={logUser} />
         </div>
     )
 }

@@ -1,3 +1,13 @@
+.btn-reset {
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: inherit;
+    text-decoration: underline;
+    font-size: inherit;
+}
+
 .btn {
         &, &:link, &:hover {
             border: none;

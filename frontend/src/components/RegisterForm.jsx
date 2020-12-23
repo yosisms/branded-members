@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 import {useForm} from 'react-hook-form';
 
-const RegisterForm = ({callUsersApi}) => {
+const RegisterForm = ({logUser}) => {
     const history = useHistory();
 
     const {register, handleSubmit, errors} = useForm();
@@ -16,7 +16,6 @@ const RegisterForm = ({callUsersApi}) => {
     } 
 
     const onSubmit = (data, e) => {
-        e.preventDefault();
         axios({
             method: 'POST',
             url: '/api/users/register',
@@ -26,11 +25,10 @@ const RegisterForm = ({callUsersApi}) => {
             data: JSON.stringify(data)
         }).then((respond) => {
             if(respond.data.isValid === false){
-                // alert(respond.data.message);
                 setIsUsernameTaken(respond.data.message);
             } else {
-                callUsersApi();
-                history.push('/login');
+                logUser();
+                history.push('/');
             }
         });
     }

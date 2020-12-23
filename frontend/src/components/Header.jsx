@@ -1,7 +1,20 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
+import axios from 'axios';
 
 const Header = ({loggedUser, setLoggedUser}) => {
+
+    const history = useHistory();
+
+    const logout= () => {
+        axios.get('/api/logout')
+            .then((res, err) => {
+                err && console.log(err);
+            });
+            setLoggedUser(false);
+            history.push('/');
+    }
+
     return (
         <header className="header">
             <div className="header__logo-box">
@@ -10,7 +23,8 @@ const Header = ({loggedUser, setLoggedUser}) => {
             {loggedUser ? (
                 <div className="header__user-box">
                     <h4 className="heading-quaternary">Hello {loggedUser.firstName}!</h4>
-                            <div>To log out: <Link to='/' onClick={()=>setLoggedUser(null)} className="header__user-box--link">Log out</Link></div>
+                    <div>To log out:<button onClick={logout} className="btn-reset header__user-box--link">Log out</button></div>
+                    {/* <div>To log out:<Link to='/' className="header__user-box--link" onClick={logout}>Log out</Link></div> */}
                 </div>
                 ) : (
                     <div className="header__user-box">
