@@ -16,15 +16,16 @@ const LoginForm = ({logUser}) => {
                 'Content-Type': 'application/json'
             },
             data: JSON.stringify(data)
-        }).then((respond, err) => {
-            err && console.log(err);
-            if(respond) {
+        })
+        .catch((err) => {
+            setError('Username or password is incorrect');
+        })
+        .then((respond) => {
+            if(respond){
                 logUser();
                 history.push('/');
-            } else {
-                setError('username or password is incorrect');
             }
-        });
+            });
     }
     return (
         <div className="formContainer">

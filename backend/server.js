@@ -125,7 +125,6 @@ app.post('/api/users/register', urlEncodedFalse ,[
             }
         })
     } else {
-        console.log(errors.errors);
         res.json(errors.errors);
     }
 })
@@ -141,7 +140,7 @@ app.post('/api/login', (req, res) => {
             console.log(err);
         } else {
             passport.authenticate('local')(req, res, () => {
-                    res.send(req.user);
+                res.send(true);
             })
         }
     })
